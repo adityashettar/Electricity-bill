@@ -1,8 +1,15 @@
-# Electricity Bill Calculator
+# Electricity Bill Calculator with Discount
 
 def calculate_bill(units_consumed):
     rate_per_unit = 5  # ₹5 per unit
     total_bill = units_consumed * rate_per_unit
+
+    # Apply 10% discount if bill exceeds ₹1000
+    if total_bill > 1000:
+        discount = total_bill * 0.10
+        total_bill -= discount
+        print(f"A 10% discount of ₹{discount:.2f} has been applied.")
+
     return total_bill
 
 # Input from user
